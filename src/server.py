@@ -28,6 +28,7 @@ api = restful.Api(app)
 ############################################################
 @login_manager.user_loader
 def load_user(userid):
+    print 'trying to load user'
     return User.query.filter(User.id == userid).first()
 
 @login_manager.token_loader
@@ -62,4 +63,4 @@ register_blueprints(app, api)
 if __name__ == '__main__':
     app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days=14)
     login_manager.setup_app(app)
-    app.run(debug=False)
+    app.run(debug=True)

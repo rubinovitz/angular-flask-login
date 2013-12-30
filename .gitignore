@@ -2,3 +2,8 @@
 *.pyc
 *.project
 *.pydevproject
+envs.sh
+*~
+*swo
+*swp
+venv
